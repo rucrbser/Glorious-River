@@ -1,0 +1,29 @@
+---
+title: "Glorious River"
+author: "rucrbser"
+date: "May 6, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Welcome to our Beautiful Country!
+
+```{r}
+library(leaflet)
+
+HPJIcon <- makeIcon(
+        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/6/67/Shanghai_121.45796E_31.22234N.jpg", 
+        iconWidth = 31*215/230, iconHeight = 31, 
+        iconAnchorX = 31*215/230/2, iconAnchorY = 16)
+
+river <- leaflet() %>% 
+        addTiles() %>% 
+        addMarkers(lng = 121.504175, lat = 31.222934, 
+                   popup = "Welcome to HPJ", icon = HPJIcon)
+        
+river
+```
